@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mossalji.DataModels
+namespace Mossalji.Data.DataModels
 {
     public class Order :BaseDataModel
     {
@@ -79,8 +79,8 @@ namespace Mossalji.DataModels
 
         public Driver Driver { get; set; }
         public Employee Employee { get; set; }
-        public Customer Customer { get; set; }
-        public Client Client { get; set; }
+        public Reciver Customer { get; set; }
+        public Sender Client { get; set; }
 
 
 

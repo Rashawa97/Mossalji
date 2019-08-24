@@ -23,6 +23,8 @@ namespace Mossalji.WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            MainContent.Content = new OrdersView();
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
@@ -40,6 +42,39 @@ namespace Mossalji.WPF
         {
             ButtonOpenMenu.Visibility = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void ListViewItem_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MainContent.Content = new MyOrders();
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listview = sender as ListView;
+            switch(listview.SelectedIndex)
+            {
+                case 0:
+                    MainContent.Content = new OrdersView();
+                    break;
+                case 2:
+                    MainContent.Content = new MyOrders();
+                    break;
+                case 3:
+                    MainContent.Content = new MySenders();
+                    break;
+                case 4:
+                    MainContent.Content = new MyRecivers();
+                    break;
+                case 5:
+                    MainContent.Content = new MyDrivers();
+                    break;
+                case 7:
+                    // Reports
+                    MainContent.Content = null;
+                    break;
+
+            }
         }
     }
 }

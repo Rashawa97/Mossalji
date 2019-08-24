@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mossalji.DataModels
+namespace Mossalji.Data.DataModels
 {
-  public  class Client :BaseDataModel
+    public class Sender :BaseDataModel
     { /// <summary>
       /// اسم العميل
       /// </summary>
@@ -39,7 +39,7 @@ namespace Mossalji.DataModels
         ///      ذمم ماليه للعميل
         /// </summary>
         public FinancialStatus FinancialStatus { get; set; }
-     
+
 
         public ICollection<Order> Orders { get; set; }
     }

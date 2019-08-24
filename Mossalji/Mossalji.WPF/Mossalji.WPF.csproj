@@ -86,7 +86,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyDrivers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyRecivers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MySenders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,8 +108,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyDrivers.xaml.cs">
+      <DependentUpon>MyDrivers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyOrders.xaml.cs">
       <DependentUpon>MyOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyRecivers.xaml.cs">
+      <DependentUpon>MyRecivers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MySenders.xaml.cs">
+      <DependentUpon>MySenders.xaml</DependentUpon>
     </Compile>
     <Compile Include="OrdersView.xaml.cs">
       <DependentUpon>OrdersView.xaml</DependentUpon>

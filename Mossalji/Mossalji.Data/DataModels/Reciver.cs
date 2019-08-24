@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mossalji.DataModels
+namespace Mossalji.Data.DataModels
 {
-  public class Customer :BaseDataModel
-    { /// <summary>
+   public class Reciver :BaseDataModel
+    {
+
+         /// <summary>
       ///اسم الزبون
       /// </summary> 
         [Required]
@@ -30,6 +32,5 @@ namespace Mossalji.DataModels
         public string PhoneNumber { get; set; }
 
         public ICollection<Order> Orders { get; set; }
-
     }
 }

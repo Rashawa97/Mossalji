@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mossalji.Data.DataModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,28 +13,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Mossalji.Data.DataModels;
 
 namespace Mossalji.WPF
 {
     /// <summary>
-    /// Interaction logic for MyOrders.xaml
+    /// Interaction logic for MySenders.xaml
     /// </summary>
-    public partial class MyOrders : UserControl
+    public partial class MySenders : UserControl
     {
-
-        private List<Order> AllRecords { set; get; }
-        private List<Order> filtered = new List<Order>();
-        public MyOrders()
+        private List<Sender> AllRecords { set; get; }
+        private List<Sender> filtered = new List<Sender>();
+        public MySenders()
         {
             InitializeComponent();
         }
-
         void OnLoad(object sender, RoutedEventArgs e)
         {
             using (DataService DS = new DataService())
             {
-                AllRecords = DS.Orders.Where(r => r.Disabled != true).
+                AllRecords = DS.Senders.Where(r => r.Disabled != true).
                           ToList();
             }
             // Initiaing the filtered list
@@ -44,8 +42,7 @@ namespace Mossalji.WPF
         private void DataGridBinding()
         {
             DV.ItemsSource = filtered;
-       
+
         }
     }
 }
-

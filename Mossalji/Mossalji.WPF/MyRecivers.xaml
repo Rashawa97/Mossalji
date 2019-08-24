@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="Mossalji.WPF.MyRecivers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mossalji.WPF"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Loaded="OnLoad"
+             mc:Ignorable="d" 
+             FlowDirection="RightToLeft"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="10,10,10,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Text="المستقبلين" 
+                Foreground="#BE2525"
+                FontSize="30" 
+                FontWeight="Bold" 
+                Margin="5" 
+                Grid.Row="0" Grid.Column="1" 
+                HorizontalAlignment="Center"/>
+
+            <TextBox
+                x:Name="NameTextBox"
+                materialDesign:HintAssist.Hint="بحث"
+                FontSize="25" FontWeight="Regular"
+                Margin="5"
+                Grid.Row="1" Grid.ColumnSpan="3">
+
+            </TextBox>
+
+
+            <DataGrid      
+                
+                Grid.Row="2" Grid.ColumnSpan="3"
+                Margin="0 8 0 0"
+                x:Name="DV"
+                CanUserSortColumns="True"
+                CanUserAddRows="False"
+                
+                AutoGenerateColumns="False"
+                materialDesign:DataGridAssist.CellPadding="8 3 3 3"
+                materialDesign:DataGridAssist.ColumnHeaderPadding="8" 
+                Background="#FFA91F1F">
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn 
+                        Width="*"
+                        Binding="{Binding CustomerName}"
+                        Header="اسم الزبون "
+                        IsReadOnly="True"
+                        />
+          
+
+                    <DataGridTextColumn 
+                        Width="*"
+                        Binding="{Binding City}"
+                        Header="المدينة"
+                        IsReadOnly="True"
+                        />
+                    <DataGridTextColumn 
+                        Width="*"
+                        Binding="{Binding Place}"
+                        Header="المنطقة"
+                        IsReadOnly="True"
+                        />
+                    <DataGridTextColumn 
+                        Width="*"
+                        Binding="{Binding PhoneNumber }"
+                        Header="رقم هاتف الزبون"
+                        IsReadOnly="True"
+                        />
+                 
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+
+            <Button
+                Grid.Row="3"
+                Grid.Column="0"
+                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Width="100"
+                ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                Background="#FFA91F1F" Foreground="#DDFFF5F5">
+                تفاصيل
+            </Button>
+            <Button
+                Grid.Row="3"
+                Grid.Column="1"
+                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Width="100"
+                ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                تعديل
+            </Button>
+            <Button
+                Grid.Row="3"
+                Grid.Column="2"
+                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Width="100"
+                ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                الغاء
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

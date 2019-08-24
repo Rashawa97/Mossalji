@@ -1,4 +1,4 @@
-﻿using Mossalji.DataModels;
+﻿using Mossalji.Data.DataModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,8 +15,8 @@ namespace Mossalji.Data.DataModels
         {
      
         }
-        public virtual DbSet<Client> Clients { get; set; }
-        public virtual DbSet<Customer> Cutomers { get; set; }
+        public virtual DbSet<Sender> Senders { get; set; }
+        public virtual DbSet<Reciver> Receivers { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Driver> Drivers { get; set; }
         public virtual DbSet<Order> Orders { get; set; }

@@ -56,12 +56,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DataModels\Base.cs" />
-    <Compile Include="DataModels\Client.cs" />
-    <Compile Include="DataModels\Customer.cs" />
     <Compile Include="DataModels\DataService.cs" />
     <Compile Include="DataModels\Driver.cs" />
     <Compile Include="DataModels\Employee.cs" />
     <Compile Include="DataModels\Order.cs" />
+    <Compile Include="DataModels\Reciver.cs" />
+    <Compile Include="DataModels\Sender.cs" />
     <Compile Include="Enums\CarStatus.cs" />
     <Compile Include="Enums\DriverStatus.cs" />
     <Compile Include="Enums\FinanicalStatus.cs" />

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mossalji.DataModels
+namespace Mossalji.Data.DataModels
 {
     public class Driver : BaseDataModel
     {     /// <summary>
