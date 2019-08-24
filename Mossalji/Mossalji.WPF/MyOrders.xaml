@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="Mossalji.WPF.MyOrders"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mossalji.WPF"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid FlowDirection="RightToLeft">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="طلباتي" Foreground="#BE2525" FontSize="30" FontWeight="Bold" Margin="5" Grid.Row="0"/>
+
+            <TextBox
+  x:Name="NameTextBox"
+  materialDesign:HintAssist.Hint="بحث" FontSize="25" FontWeight="Regular" Margin="5" Grid.Row="1" Grid.ColumnSpan="3">
+
+            </TextBox>
+            <DataGrid
+                  Loaded="OnLoad"
+                Grid.Row="2"
+            Grid.ColumnSpan="3"
+  Margin="0 8 0 0"
+  ItemsSource="{Binding Items3}"
+  CanUserSortColumns="True"
+  CanUserAddRows="False"
+  AutoGenerateColumns="False"
+  materialDesign:DataGridAssist.CellPadding="13 8 8 8"
+  materialDesign:DataGridAssist.ColumnHeaderPadding="8" Background="#FFA91F1F">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn
+      Binding="{Binding IsSelected}"
+      ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
+                        <DataGridCheckBoxColumn.Header>
+                            <!--padding to allow hit test to pass thru for sorting -->
+                            <Border
+          Background="Transparent"
+          Padding="6 0 6 0"
+          HorizontalAlignment="Center">
+                                <CheckBox
+            HorizontalAlignment="Center"
+            DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext}"
+            IsChecked="{Binding IsAllItems3Selected}" />
+                            </Border>
+                        </DataGridCheckBoxColumn.Header>
+                    </DataGridCheckBoxColumn>
+                    <DataGridTextColumn
+      Binding="{Binding ClientName}"
+      Header="اسم العميل (صاحب الطلب)   "
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                    <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
+                    <materialDesign:MaterialDataGridTextColumn
+      Binding="{Binding OrderType}"
+      Header=" نوع الطلب"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                    <!-- set a max length to get an indicator in the editor -->
+                    <materialDesign:MaterialDataGridTextColumn
+      Binding="{Binding OrderStatus}"
+      Header="حالة الطلب"
+      MaxLength="255"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                    <materialDesign:MaterialDataGridComboBoxColumn
+      Header="محرر الطلب"
+      SelectedValueBinding="{Binding Employee}"
+      ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.Foods}" />
+                    <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
+                    <materialDesign:MaterialDataGridComboBoxColumn
+      Header="اسم السائق"
+      SelectedValueBinding="{Binding Delivery}"
+      ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.Foods}" />
+                    <materialDesign:MaterialDataGridComboBoxColumn
+      Header="اسم الزبون (مستلم الطلب)"
+      SelectedValueBinding="{Binding CustomerName}"
+      ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.Foods}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+
+            <Button
+                Grid.Row="3"
+                Grid.Column="0"
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Width="100"
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFF5F5">
+                تفاصيل
+            </Button>
+            <Button
+                Grid.Row="3"
+                  Grid.Column="1"
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Width="100"
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                تعديل
+            </Button>
+            <Button
+                Grid.Row="3"
+                  Grid.Column="2"
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Width="100"
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                الغاء
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

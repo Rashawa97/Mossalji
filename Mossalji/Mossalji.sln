@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mossalji.WPF", "Mossalji.WPF\Mossalji.WPF.csproj", "{1D378289-C8BD-4590-861F-0A37B88A2346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mossalji.Data", "Mossalji.Data\Mossalji.Data.csproj", "{1F1E8971-F601-4C27-B72F-61BB23888029}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D378289-C8BD-4590-861F-0A37B88A2346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D378289-C8BD-4590-861F-0A37B88A2346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D378289-C8BD-4590-861F-0A37B88A2346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D378289-C8BD-4590-861F-0A37B88A2346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F1E8971-F601-4C27-B72F-61BB23888029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F1E8971-F601-4C27-B72F-61BB23888029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F1E8971-F601-4C27-B72F-61BB23888029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F1E8971-F601-4C27-B72F-61BB23888029}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {740A3BF4-904F-4320-94A0-2842F93A1FF3}
+	EndGlobalSection
+EndGlobal
