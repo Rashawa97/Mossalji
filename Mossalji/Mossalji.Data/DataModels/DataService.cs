@@ -1,4 +1,5 @@
 ﻿using Mossalji.Data.DataModels;
+using Mossalji.Data.ExtensionMethod;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -27,6 +28,17 @@ namespace Mossalji.Data.DataModels
                 Database.SetInitializer(new DbInitializer());
             base.OnModelCreating(modelBuilder);
         }
+
+        public Employee Login(string userName, string password)
+        {
+            //TODO: Fix igonring case for the userName 
+            var passHash = password.GetStringSha256Hash();
+            var employee = this.Employees.FirstOrDefault(e => e.EmployeeName.Equals(userName,StringComparison.CurrentCulture) && e.PasswordHash == passHash);
+            return employee;
+        }
+
+
+        
     }
     public class DbInitializer : CreateDatabaseIfNotExists<DataService>
     {
@@ -36,8 +48,16 @@ namespace Mossalji.Data.DataModels
         /// <param name="context"></param>
         protected override void Seed(DataService context)
         {
-            
+
             // Seed the inserted information
+
+            var employee = new Employee()
+            {
+                EmployeeName = "موصلجي",
+                PasswordHash = "123emp".GetStringSha256Hash(),
+            };
+
+            context.Employees.Add(employee);
             base.Seed(context);
         }
     }

@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="Mossalji.WPF.OrdersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mossalji.WPF"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+Loaded="UserControl_Loaded"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid FlowDirection="RightToLeft">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+
+            <TextBlock Text="موصلجي" Foreground="#BE2525" FontSize="30" FontWeight="Bold" Margin="5" Grid.Row="1"/>
+
+            <Grid Margin="5" Grid.Row="2" Grid.Column="0">
+
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#FFEEEEEE" ShadowDepth="1"/>
+                </Grid.Effect>
+                <Button
+                    
+                    Width="{Binding RelativeSource={RelativeSource self}, Path=ActualHeight}"
+                    Height="auto"
+                    x:Name="AddOrder"
+                    Click="AddOrder_Click"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    ToolTip="اضافة طلب"
+                    Margin="0">
+                    <materialDesign:PackIcon Kind="ShoppingCartOutline" Width="auto" Height="auto" />
+                </Button>
+
+
+            </Grid>
+          
+            <Grid Margin="5" Grid.Row="2" Grid.Column="1">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#FFEEEEEE" ShadowDepth="1"/>
+                </Grid.Effect>
+                <Button
+                    Width="{Binding RelativeSource={RelativeSource self}, Path=ActualHeight}"
+                    Height="auto"
+                    x:Name="AddCustomer"
+                    Click="AddCustomer_Click"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    ToolTip="اضافة زبون (مستقبل )"  Margin="0">
+                    <materialDesign:PackIcon Kind="CallReceived" Width="auto" Height="auto"/>
+                </Button>
+     
+
+            </Grid>
+            <Grid Margin="5" Grid.Row="3" Grid.Column="0">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#FFEEEEEE" ShadowDepth="1"/>
+                </Grid.Effect>
+                <Button
+                    Width="{Binding RelativeSource={RelativeSource self}, Path=ActualHeight}"
+                    Height="auto"
+                    x:Name="AddClient"
+                    Click="AddClient_Click"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    ToolTip="اضافة عميل (مرسل)"  Margin="0">
+                    <materialDesign:PackIcon Kind="Send"  Width="auto" Height="auto"/>
+
+
+                </Button>
+
+
+
+
+            </Grid>
+           
+         
+
+            <Grid Margin="5" Grid.Row="3" Grid.Column="1">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#FFEEEEEE" ShadowDepth="1"/>
+                </Grid.Effect>
+
+                <Button
+                    Width="{Binding RelativeSource={RelativeSource self}, Path=ActualHeight}"
+                    Height="auto"
+                    x:Name="AddDriver"
+                   
+                    Click="AddDriver_Click"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    ToolTip="اضافة سائق"  Margin="0">
+                    <materialDesign:PackIcon Kind="DriversLicenseOutline" Width="auto" Height="auto"/>
+
+                </Button>
+      
+            </Grid>
+        </Grid>
+        <!--Fillter Side-->
+        <local:AboveFillter 
+            x:Name="FilterSide"
+            Grid.Column="1"/>
+        <ContentControl 
+            Grid.ColumnSpan="2"
+            x:Name="AdditionalControl" />
+    </Grid>
+</UserControl>

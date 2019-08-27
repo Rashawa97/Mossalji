@@ -7,7 +7,7 @@
     <ProjectGuid>{1D378289-C8BD-4590-861F-0A37B88A2346}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Mossalji.WPF</RootNamespace>
-    <AssemblyName>Mossalji.WPF</AssemblyName>
+    <AssemblyName>Mossalji</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -33,6 +33,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -74,10 +77,57 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboveFillter.xaml.cs">
+      <DependentUpon>AboveFillter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AddDrivers.xaml.cs">
+      <DependentUpon>AddDrivers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AddReciver.xaml.cs">
+      <DependentUpon>AddReciver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AddSender.xaml.cs">
+      <DependentUpon>AddSender.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OverlayControl.xaml.cs">
+      <DependentUpon>OverlayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ValueConverters\BaseValueConverter.cs" />
+    <Compile Include="ValueConverters\EnumToStringConverter.cs" />
+    <Page Include="AboveFillter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\AddDrivers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\AddOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\AddReciver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\AddSender.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Control\AddOrder.xaml.cs">
+      <DependentUpon>AddOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -86,41 +136,45 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MyDrivers.xaml">
+    <Page Include="OverlayControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MyOrders.xaml">
+    <Page Include="Pages\MyDrivers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MyRecivers.xaml">
+    <Page Include="Pages\MyOrders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MySenders.xaml">
+    <Page Include="Pages\MyRecivers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OrdersView.xaml">
+    <Page Include="Pages\MySenders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrdersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyDrivers.xaml.cs">
+    <Compile Include="Pages\MyDrivers.xaml.cs">
       <DependentUpon>MyDrivers.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyOrders.xaml.cs">
+    <Compile Include="Pages\MyOrders.xaml.cs">
       <DependentUpon>MyOrders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyRecivers.xaml.cs">
+    <Compile Include="Pages\MyRecivers.xaml.cs">
       <DependentUpon>MyRecivers.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MySenders.xaml.cs">
+    <Compile Include="Pages\MySenders.xaml.cs">
       <DependentUpon>MySenders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OrdersView.xaml.cs">
+    <Compile Include="Pages\OrdersView.xaml.cs">
       <DependentUpon>OrdersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -139,6 +193,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -163,6 +218,30 @@
     <Resource Include="helpers\resturant-icon-13.png" />
     <Resource Include="helpers\store.png" />
     <Resource Include="helpers\teamwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+    <Content Include="sqlceca40.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlcecompact40.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlceer40EN.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlceme40.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlceoledb40.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlceqp40.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlcese40.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -16,13 +16,23 @@ using System.Windows.Shapes;
 namespace Mossalji.WPF
 {
     /// <summary>
-    /// Interaction logic for OrdersView.xaml
+    /// Interaction logic for AboveFillter.xaml
     /// </summary>
-    public partial class OrdersView : UserControl
+    public partial class AboveFillter : UserControl
     {
-        public OrdersView()
+        public AboveFillter()
         {
             InitializeComponent();
+        }
+
+        private void DataNow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.DataNow.Text = DateTime.Now.ToString();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.EmploeeName.Text = ((MainWindow)App.Current.MainWindow).CurrentUser.EmployeeName;
         }
     }
 }

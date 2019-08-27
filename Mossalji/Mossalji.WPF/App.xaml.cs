@@ -19,7 +19,8 @@ namespace Mossalji.WPF
 
             InitiateDataBase();
 
-            App.Current.MainWindow = new MainWindow();
+            App.Current.MainWindow = new Login();
+            //App.Current.MainWindow = new Test();
 
             App.Current.MainWindow.Show();
 

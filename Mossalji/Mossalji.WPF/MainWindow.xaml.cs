@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mossalji.Data.DataModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,13 @@ namespace Mossalji.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+
+        public readonly Employee CurrentUser;
+
+        public MainWindow(Employee employee)
         {
+            CurrentUser = employee;
+
             InitializeComponent();
 
             MainContent.Content = new OrdersView();
@@ -75,6 +81,19 @@ namespace Mossalji.WPF
                     break;
 
             }
+        }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            var loginWidnow = new Login();
+
+            App.Current.MainWindow = loginWidnow;
+
+            this.Hide();
+
+            App.Current.MainWindow.Show();
+
+            this.Close();
         }
     }
 }

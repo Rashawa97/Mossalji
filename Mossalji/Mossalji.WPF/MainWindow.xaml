@@ -86,6 +86,9 @@
             <BeginStoryboard x:Name="CloseMenu_BeginStoryboard" Storyboard="{StaticResource CloseMenu}"/>
         </EventTrigger>
     </Window.Triggers>
+    
+    
+    
     <Grid Background="#BE2525" FlowDirection="RightToLeft">
         <StackPanel x:Name="StackPanelMenu" Width="250" HorizontalAlignment="Left" Margin="-250 0 0 0" RenderTransformOrigin="0.5,0.5">
             <StackPanel.RenderTransform>
@@ -96,11 +99,11 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </StackPanel.RenderTransform>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="100" HorizontalAlignment="Center">
+            <StackPanel Panel.ZIndex="1" Orientation="Horizontal" VerticalAlignment="Top" Height="100" HorizontalAlignment="Center">
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
                     <materialDesign:PackIcon Kind="Settings" Width="40" Height="40"/>
                 </Button>
-                <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="80" Height="80" Margin="10" RenderTransformOrigin="0.5,0.5">
+                <Button  FlowDirection="LeftToRight" x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="80" Height="80" Margin="10" RenderTransformOrigin="0.5,0.5">
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -110,7 +113,7 @@
                         </TransformGroup>
                     </Button.RenderTransform>
                     <Button.Background>
-                        <ImageBrush ImageSource="helpers/pexels-photo-247885.png" Stretch="UniformToFill"/>
+                        <ImageBrush  ImageSource="helpers/pexels-photo-247885.png" Stretch="UniformToFill"/>
                     </Button.Background>
                 </Button>
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
@@ -221,8 +224,8 @@
                         </TransformGroup>
                     </ListViewItem.RenderTransform>
                     <StackPanel Orientation="Horizontal" Margin="10 0">
-                        <materialDesign:PackIcon Kind="Skype" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Skype" Margin="10" VerticalAlignment="Center"/>
+                        <materialDesign:PackIcon Kind="Logout" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="خروج من النظام" Margin="10" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
             </ListView>
@@ -248,21 +251,28 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="ButtonCloseMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonCloseMenu_Click" Visibility="Collapsed">
-                    <materialDesign:PackIcon Kind="Menu" Foreground="#FF3580BF"/>
+                <Button Panel.ZIndex="1" x:Name="ButtonCloseMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonCloseMenu_Click" Visibility="Collapsed">
+                    <materialDesign:PackIcon Kind="Menu" Foreground="#BE2525"/>
                 </Button>
-                <Button x:Name="ButtonOpenMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonOpenMenu_Click">
-                    <materialDesign:PackIcon Kind="Menu" Foreground="#FF3580BF"/>
+                <Button Panel.ZIndex="1" x:Name="ButtonOpenMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonOpenMenu_Click">
+                    <materialDesign:PackIcon Kind="Menu" Foreground="#BE2525"/>
                 </Button>
             </Grid>
         </Grid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right" Margin="10">
-            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}">
-                <materialDesign:PackIcon Kind="Bell"/>
+        <StackPanel 
+            Panel.ZIndex="1" Orientation="Horizontal" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right" Margin="10">
+            <Button 
+                x:Name="LogoutButton"
+                Click="LogoutButton_Click"
+                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                Width="30" Height="30" Padding="0" Background="{x:Null}"
+                BorderBrush="{x:Null}">
+                <materialDesign:PackIcon Kind="Logout"/>
             </Button>
             <Button x:Name="ButtonClose" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonClose_Click">
                 <materialDesign:PackIcon Kind="Power"/>
             </Button>
         </StackPanel>
+
     </Grid>
 </Window>

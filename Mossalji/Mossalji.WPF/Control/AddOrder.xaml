@@ -1,0 +1,267 @@
+﻿<UserControl x:Class="Mossalji.WPF.AddOrder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mossalji.WPF"
+             xmlns:enums="clr-namespace:Mossalji.Data.Enums;assembly=Mossalji.Data"
+             mc:Ignorable="d" 
+             FlowDirection="RightToLeft"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border BorderThickness="2" BorderBrush="Black"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Background="Wheat"
+                >
+        <materialDesign:DialogHost>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <!-- Upper Banner-->
+
+                        <!-- Content-->
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <!-- Title -->
+                    <TextBlock Text="اضافة طلب" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#BE2525" FontSize="30" FontWeight="Regular" Margin="5,5,0,4.333" Grid.Row="0"  />
+
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <UniformGrid Rows="1">
+                            <!-- Drivers -->
+                            <StackPanel Orientation="Horizontal" >
+                                <ComboBox 
+                                        x:Name="Drivers"
+                                        Width="150"
+                                        HorizontalContentAlignment="Center"
+                                        materialDesign:HintAssist.Hint="اختيار السائق"
+                                        Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                        FlowDirection="LeftToRight">
+
+                                </ComboBox>
+                                <Button
+                                        x:Name="AddDriver"
+                                        Click="AddDriver_Click"
+                                        Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        ToolTip="MaterialDesignIconForegroundButton">
+                                    <materialDesign:PackIcon
+                                            Kind="Add" />
+                                </Button>
+                            </StackPanel>
+                            
+                            <!-- Senders -->
+                            <StackPanel Grid.Row="2"
+                                    Orientation="Horizontal" >
+                                <ComboBox 
+                                        x:Name="Senders"
+                                        Width="150"
+                                        HorizontalContentAlignment="Center"
+                                        materialDesign:HintAssist.Hint="اختيار المرسل"
+                                        Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                        FlowDirection="LeftToRight">
+
+                                </ComboBox>
+                                <Button
+                                        x:Name="AddSender"
+                                        Click="AddSender_Click"
+                                        Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        ToolTip="MaterialDesignIconForegroundButton">
+                                    <materialDesign:PackIcon
+                                            Kind="Add" />
+                                </Button>
+                            </StackPanel>
+                            
+
+                            <!-- Receivers -->
+                            <StackPanel Grid.Row="4"
+                                    Orientation="Horizontal" >
+                                <ComboBox 
+                                        x:Name="Recivers"
+                                        Width="150"
+                                        HorizontalContentAlignment="Center"
+                                        materialDesign:HintAssist.Hint="اختيار المستقبل"
+                                        Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                        FlowDirection="LeftToRight">
+
+                                </ComboBox>
+                                <Button
+                                        x:Name="AddReciver"
+                                        Click="AddReciver_Click"
+                                        Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        ToolTip="MaterialDesignIconForegroundButton">
+                                    <materialDesign:PackIcon
+                                            Kind="Add" />
+                                </Button>
+                            </StackPanel>
+                        </UniformGrid>
+                        <ContentControl 
+                                    Grid.Row="1"
+                                    x:Name="AddItemControl"/>
+                    </Grid>
+                    <!-- Default Fields-->
+                    <UniformGrid  
+                                TextElement.Foreground="#FFA91F1F"
+                                Grid.Row="2"
+                                Columns="3"
+                                >
+                        <TextBox 
+                                  x:Name="OrderType"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="نوع الطلب "
+                                    Margin="8"
+                                     />
+                        <TextBox 
+                                    x:Name="OrderDescription"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="وصف الطلب"
+                                    Margin="8"
+                                     />
+                        <TextBox 
+                                    x:Name="Volume"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="حجم الطلب"
+                                    ToolTip="حجم الطلب (طول xعرض x ارتفاع)"
+                                    Margin="8"
+                                     />
+                        <TextBox  x:Name="Wieght"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="وزن الطلب"
+                                    Margin="8"
+                                     />
+                        <TextBox  x:Name="Value"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="قيمة الطلب"
+                                    Margin="8"
+                                    />
+                        <TextBox x:Name="Tax"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="اجرة التوصيل"
+                                    ToolTip="اجرة التوصيل كاملة"
+                                    Margin="8"
+                                     />
+                        <TextBox  x:Name="MossaljiTaxPercentage"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="عمولة موصلجي (نسبة)"
+                                    Margin="8"
+                                    ToolTip=" عمولة موصلجي نسبة"
+                                    />
+                        <TextBox  x:Name="MossaljiTaxDinnar"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="عمولة موصلجي (دينار)"
+                                    Margin="8"
+                                    />
+                        <TextBox  x:Name="DeliveryTax"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="عمولة السائق"
+                                    Margin="8"
+                                    />
+                        <ComboBox  x:Name="OrderStatus"
+                                    FlowDirection="LeftToRight"
+                                    materialDesign:HintAssist.Hint="حالة الطلب"
+                                    HorizontalContentAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    VerticalContentAlignment="Center"  
+                                    Margin="8"
+                                    Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                    ItemsSource="{local:Enumerate {x:Type enums:OrderStatus}}"/>
+                        <ComboBox x:Name="PaymentMethod"
+                                    FlowDirection="LeftToRight"
+                                    materialDesign:HintAssist.Hint="طريقة السداد للعميل"
+                                    HorizontalContentAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    VerticalContentAlignment="Center"
+                                    Margin="8"
+                                    Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                    ItemsSource="{local:Enumerate {x:Type enums:PaymentMethod}}"/>
+
+
+                        <materialDesign:TimePicker
+                                    x:Name="OrderCreationTime"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="8"
+                                    Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+                                    materialDesign:HintAssist.Hint="وقت استلام الطلب من العميل" />
+
+
+                        <materialDesign:TimePicker
+                                    x:Name="OrderDateTime"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="8"
+                                    Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+                                    materialDesign:HintAssist.Hint="وقت استلام الطلب من العميل" />
+
+                        <materialDesign:TimePicker
+                                     x:Name="DriverNotifyingTime"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="8"
+                                    Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+                                    materialDesign:HintAssist.Hint="وقت تبليغ السائق " />
+
+                        <materialDesign:TimePicker
+                                        x:Name="PackageReceivingTime"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="8"
+                                    Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+                                    materialDesign:HintAssist.Hint="وقت استلام السائق للطلب " />
+
+                        <materialDesign:TimePicker
+                                          x:Name="PackageDeleveringTime"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="8"
+                                    Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+                                    materialDesign:HintAssist.Hint="وقت استلام الزبون للطلب" />
+
+                    </UniformGrid>
+
+                    <!-- Buttons -->
+                    <Grid  Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <!-- Image -->
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                                    x:Name="SaveOrder"
+                                    Click="SaveOrder_Click"
+                            
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="100"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFF5F5">
+                            حفظ
+                        </Button>
+
+                        <Button
+                                    IsCancel="True"
+                                    x:Name="CancelButton"
+                         Click="CancelButton_Click"
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="100"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFF5F5">
+                            الغاء
+                        </Button>
+                    </Grid>
+                </Grid>
+
+            </ScrollViewer>
+
+
+        </materialDesign:DialogHost>
+    </Border>
+
+
+</UserControl>

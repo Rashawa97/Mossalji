@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mossalji.WPF.Properties
-{
-
-
+namespace Mossalji.WPF.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,52 +19,206 @@ namespace Mossalji.WPF.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Mossalji.WPF.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تحت التنفيذ.
+        /// </summary>
+        internal static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ملغي.
+        /// </summary>
+        internal static string Canceled {
+            get {
+                return ResourceManager.GetString("Canceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تم التنفيذ.
+        /// </summary>
+        internal static string Completed {
+            get {
+                return ResourceManager.GetString("Completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to سائق خارجي.
+        /// </summary>
+        internal static string External {
+            get {
+                return ResourceManager.GetString("External", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  سيارة خارجية.
+        /// </summary>
+        internal static string ExternalCar {
+            get {
+                return ResourceManager.GetString("ExternalCar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شركات قائمة.
+        /// </summary>
+        internal static string Inc {
+            get {
+                return ResourceManager.GetString("Inc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to سائق الشركة.
+        /// </summary>
+        internal static string Internal {
+            get {
+                return ResourceManager.GetString("Internal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to سيارة الشركة.
+        /// </summary>
+        internal static string InternalCar {
+            get {
+                return ResourceManager.GetString("InternalCar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شركات اونلاين.
+        /// </summary>
+        internal static string OnlineInc {
+            get {
+                return ResourceManager.GetString("OnlineInc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اخرى.
+        /// </summary>
+        internal static string Others {
+            get {
+                return ResourceManager.GetString("Others", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تم السداد.
+        /// </summary>
+        internal static string Paid {
+            get {
+                return ResourceManager.GetString("Paid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to معلق مع موصلجي.
+        /// </summary>
+        internal static string PendingApp {
+            get {
+                return ResourceManager.GetString("PendingApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to معلق مع السائق.
+        /// </summary>
+        internal static string PendingDriver {
+            get {
+                return ResourceManager.GetString("PendingDriver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to فردي.
+        /// </summary>
+        internal static string Personal {
+            get {
+                return ResourceManager.GetString("Personal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مطاعم.
+        /// </summary>
+        internal static string Resturants {
+            get {
+                return ResourceManager.GetString("Resturants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to محال تجارية.
+        /// </summary>
+        internal static string Shops {
+            get {
+                return ResourceManager.GetString("Shops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WesternUnion.
+        /// </summary>
+        internal static string WesternUnion {
+            get {
+                return ResourceManager.GetString("WesternUnion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zain Cash.
+        /// </summary>
+        internal static string ZainCash {
+            get {
+                return ResourceManager.GetString("ZainCash", resourceCulture);
             }
         }
     }
