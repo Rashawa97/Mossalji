@@ -73,6 +73,10 @@ namespace Mossalji.Data.DataModels
         /// </summary>
         public DateTime PackageReceivingTime { get; set; }
         /// <summary>
+        /// تاريخ استلام الطلب
+        /// </summary>
+        public DateTime OrderDateTime { get; set; }
+        /// <summary>
         ///وقت استلام الزبون الطلب                          
         /// </summary>
         public DateTime PackageDeleveringTime { get; set; }//وقت استلام الزبون الطلب

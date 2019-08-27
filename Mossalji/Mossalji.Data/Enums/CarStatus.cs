@@ -9,11 +9,11 @@ namespace Mossalji.Data.Enums
 {
     public enum CarStatus
     {
-      
-        [Description("خارجي")]
-        External,
+       
+        [Description(" سيارة خارجية " )]
+        ExternalCar,
         [Description("سيارة الشركة")]
-        Internal
+        InternalCar
 
     }
 }

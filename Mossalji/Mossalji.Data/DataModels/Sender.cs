@@ -24,16 +24,14 @@ namespace Mossalji.Data.DataModels
         /// </summary>
         [Required]
         public string Place { get; set; }
-        /// <summary>
-        /// تاريخ استلام الطلب
-        /// </summary>
-        [Required]
-        public string OrderDateTime { get; set; }
+     
+     
+
         /// <summary>
         /// نشاط العميل
         /// </summary>
         [Required]
-        public string Activity { get; set; }
+        public Activity Activity { get; set; }
 
         /// <summary>
         ///      ذمم ماليه للعميل
@@ -42,5 +40,10 @@ namespace Mossalji.Data.DataModels
 
 
         public ICollection<Order> Orders { get; set; }
+
+        public override string ToString()
+        {
+            return ClientName;
+        }
     }
 }

@@ -32,5 +32,9 @@ namespace Mossalji.Data.DataModels
         public string PhoneNumber { get; set; }
 
         public ICollection<Order> Orders { get; set; }
+        public override string ToString()
+        {
+            return $"{CustomerName} -{PhoneNumber}";
+        }
     }
 }

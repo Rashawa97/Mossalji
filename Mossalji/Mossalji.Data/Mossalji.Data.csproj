@@ -62,6 +62,7 @@
     <Compile Include="DataModels\Order.cs" />
     <Compile Include="DataModels\Reciver.cs" />
     <Compile Include="DataModels\Sender.cs" />
+    <Compile Include="Enums\Activity.cs" />
     <Compile Include="Enums\CarStatus.cs" />
     <Compile Include="Enums\DriverStatus.cs" />
     <Compile Include="Enums\FinanicalStatus.cs" />

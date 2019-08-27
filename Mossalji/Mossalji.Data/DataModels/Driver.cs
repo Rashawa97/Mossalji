@@ -30,5 +30,11 @@ namespace Mossalji.Data.DataModels
         [Required]
         public string CarNumber { get; set; }
         public ICollection<Order> Orders { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"{DriverName} - {CarNumber}";
+        }
     }
 }
