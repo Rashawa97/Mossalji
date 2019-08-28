@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -50,6 +51,13 @@ namespace Mossalji.WPF
         private void Load()
         {
             this.Focus();
+
+            this.DriverNotifyingTime.SelectedTime = DateTime.Now;
+            this.OrderCreationTime.SelectedTime = DateTime.Now;
+            this.OrderDateTime.SelectedTime = DateTime.Now;
+            this.PackageDeleveringTime.SelectedTime = DateTime.Now;
+            this.PackageReceivingTime.SelectedTime = DateTime.Now;
+           
 
             using (DataService DS = new DataService())
             {
@@ -114,6 +122,7 @@ namespace Mossalji.WPF
             this.PackageDeleveringTime.SelectedTime = _order.PackageDeleveringTime;
             this.PackageReceivingTime.SelectedTime = _order.PackageReceivingTime;
             this.OrderDateTime.SelectedTime = _order.OrderDateTime;
+            this.DriverNotifyingTime.SelectedTime = _order.DriverNotifyingTime;
             this.OrderStatus.SelectedIndex = (int)_order.OrderStatus;
             this.FinancialStatus.SelectedIndex = (int)_order.FinancialStatus;
 
@@ -145,18 +154,17 @@ namespace Mossalji.WPF
                         Volume = Volume.Text,
                         Wieght = Convert.ToInt32(Wieght.Text),
                         Value = Convert.ToDouble(Value.Text),
-                        Tax = Convert.ToDouble(Tax.Text),
-                        MossaljiTaxDinnar = Convert.ToDouble(MossaljiTaxDinnar.Text),
-                        MossaljiTaxPercentage = Convert.ToDouble(MossaljiTaxPercentage.Text),
+                        Tax = string.IsNullOrEmpty(Tax.Text)?0: Convert.ToDouble(Tax.Text),
+                        MossaljiTaxDinnar = string.IsNullOrEmpty(MossaljiTaxDinnar.Text)?0: Convert.ToDouble(MossaljiTaxDinnar.Text),
+                        MossaljiTaxPercentage =string.IsNullOrEmpty(MossaljiTaxPercentage.Text)?0: Convert.ToDouble(MossaljiTaxPercentage.Text),
                         PaymentMethod = (PaymentMethod)PaymentMethod.SelectedIndex,
-                        DeliveryTax = Convert.ToDouble(DeliveryTax.Text),
-                        OrderCreationTime = DateTime.Now,
-                        DriverNotifyingTime = (DateTime)DriverNotifyingTime.SelectedTime,
-                        PackageDeleveringTime = (DateTime)PackageDeleveringTime.SelectedTime,
-                        PackageReceivingTime = (DateTime)PackageReceivingTime.SelectedTime,
-                        OrderDateTime=(DateTime)OrderDateTime.SelectedTime,
-                        FinancialStatus = (FinancialStatus)FinancialStatus.SelectedIndex
-
+                        DeliveryTax = string.IsNullOrEmpty(DeliveryTax.Text)?0: Convert.ToDouble(DeliveryTax.Text),
+                        OrderCreationTime = (DateTime)OrderCreationTime?.SelectedTime,
+                        DriverNotifyingTime = (DateTime)DriverNotifyingTime?.SelectedTime,
+                        PackageDeleveringTime = (DateTime)PackageDeleveringTime?.SelectedTime,
+                        PackageReceivingTime = (DateTime)PackageReceivingTime?.SelectedTime,
+                        OrderDateTime = (DateTime)OrderDateTime?.SelectedTime,
+                        FinancialStatus = (FinancialStatus)FinancialStatus.SelectedIndex,
 
                     };
 
@@ -183,16 +191,16 @@ namespace Mossalji.WPF
                         order.Volume = Volume.Text;
                         order.Wieght = Convert.ToInt32(Wieght.Text);
                         order.Value = Convert.ToDouble(Value.Text);
-                        order.Tax = Convert.ToDouble(Tax.Text);
-                        order.MossaljiTaxDinnar = Convert.ToDouble(MossaljiTaxDinnar.Text);
-                        order.MossaljiTaxPercentage = Convert.ToDouble(MossaljiTaxPercentage.Text);
+                        order.Tax = string.IsNullOrEmpty(Tax.Text)?0: Convert.ToDouble(Tax.Text);
+                        order.MossaljiTaxDinnar = string.IsNullOrEmpty(MossaljiTaxDinnar.Text)?0: Convert.ToDouble(MossaljiTaxDinnar.Text);
+                        order.MossaljiTaxPercentage =string.IsNullOrEmpty(MossaljiTaxPercentage.Text)?0: Convert.ToDouble(MossaljiTaxPercentage.Text);
                         order.PaymentMethod = (PaymentMethod)PaymentMethod.SelectedIndex;
-                        order.DeliveryTax = Convert.ToDouble(DeliveryTax.Text);
-                        order.OrderCreationTime = DateTime.Now;
-                        order.DriverNotifyingTime = (DateTime)DriverNotifyingTime.SelectedTime;
-                        order.PackageDeleveringTime = (DateTime)PackageDeleveringTime.SelectedTime;
-                        order.PackageReceivingTime = (DateTime)PackageReceivingTime.SelectedTime;
-                        order.OrderDateTime = (DateTime)OrderDateTime.SelectedTime;
+                        order.DeliveryTax = string.IsNullOrEmpty(DeliveryTax.Text)?0: Convert.ToDouble(DeliveryTax.Text);
+                        order.OrderCreationTime = (DateTime)OrderCreationTime?.SelectedTime;
+                        order.DriverNotifyingTime = (DateTime)DriverNotifyingTime?.SelectedTime;
+                        order.PackageDeleveringTime = (DateTime)PackageDeleveringTime?.SelectedTime;
+                        order.PackageReceivingTime = (DateTime)PackageReceivingTime?.SelectedTime;
+                        order.OrderDateTime = (DateTime)OrderDateTime?.SelectedTime;
 
                         order.FinancialStatus = (FinancialStatus)FinancialStatus.SelectedIndex;
 
@@ -215,7 +223,9 @@ namespace Mossalji.WPF
                string.IsNullOrEmpty(OrderDescription.Text) ||
                string.IsNullOrEmpty(Volume.Text) ||
                string.IsNullOrEmpty(Wieght.Text) ||
-               string.IsNullOrEmpty(Value.Text)
+               string.IsNullOrEmpty(Value.Text)||
+               PaymentMethod.SelectedIndex<0||
+               OrderStatus.SelectedIndex<0
 
 
                )
@@ -262,5 +272,6 @@ namespace Mossalji.WPF
             ((ContentControl)AddItemControl.Content).IsEnabledChanged += AdditionalControlDisabled;
 
         }
+        
     }
 }

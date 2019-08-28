@@ -230,7 +230,7 @@
                         </TransformGroup>
                     </ListViewItem.RenderTransform>
                     <StackPanel Orientation="Horizontal" Margin="10 0">
-                        <materialDesign:PackIcon Kind="Logout" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <materialDesign:PackIcon Kind="CashRegister" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="العمولات" Margin="10" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
