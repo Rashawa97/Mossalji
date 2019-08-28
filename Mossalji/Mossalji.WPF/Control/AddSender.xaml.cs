@@ -51,7 +51,6 @@ namespace Mossalji.WPF
             this.City.IsEnabled = false;
             this.Place.IsEnabled = false;
             this.Activity.IsEnabled = false;
-            this.FinancialStatus.IsEnabled = false;
            
           this.SaveSender.Visibility = Visibility.Collapsed;
         }
@@ -62,7 +61,7 @@ namespace Mossalji.WPF
             this.City.Text = _sender.City;
             this.Place.Text = _sender.City;
             this.Activity.SelectedIndex = (int)_sender.Activity;
-            this.FinancialStatus.SelectedIndex = (int)_sender.FinancialStatus;
+            //this.FinancialStatus.SelectedIndex = (int)_sender.FinancialStatus;
         }
 
         private void SaveSender_Click(object sender, RoutedEventArgs e)
@@ -77,7 +76,7 @@ namespace Mossalji.WPF
                         City = City.Text,
                         Place = Place.Text,
                        Activity = (Activity)Activity.SelectedIndex,
-                       FinancialStatus=(FinancialStatus)FinancialStatus.SelectedIndex
+                       //FinancialStatus=(FinancialStatus)FinancialStatus.SelectedIndex
                     };
 
                     using (DataService DS = new DataService())
@@ -95,7 +94,7 @@ namespace Mossalji.WPF
                         send.City = City.Text;
                         send.Place = Place.Text;
                         send.Activity = (Activity)Activity.SelectedIndex;
-                        send.FinancialStatus = (FinancialStatus)FinancialStatus.SelectedIndex;
+                        //send.FinancialStatus = (FinancialStatus)FinancialStatus.SelectedIndex;
 
                         DS.SaveChanges();
                     }
@@ -117,7 +116,6 @@ namespace Mossalji.WPF
                string.IsNullOrEmpty(ClientName.Text) ||
                string.IsNullOrEmpty(City.Text) ||
                string.IsNullOrEmpty(Place.Text) ||
-              FinancialStatus.SelectedIndex < 0 ||
               Activity.SelectedIndex < 0
                )
             {

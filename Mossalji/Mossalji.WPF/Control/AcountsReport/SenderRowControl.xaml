@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Mossalji.WPF.SenderRowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mossalji.WPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="Bisque">
+        <StackPanel Orientation="Horizontal" >
+
+            <TextBlock Text="اسم العميل: " Padding="5"/>
+            <TextBlock Text="{Binding Sender.ClientName}" Padding="5"/>
+            <TextBlock Text="تم السداد: " Padding="5"/>
+            <TextBlock Text="{Binding Paid}" Padding="5"/>
+            <TextBlock Text="معلق مع السائق: " Padding="5"/>
+            <TextBlock Text="{Binding PendingWithDriver}" Padding="5"/>
+            <TextBlock Text="معلق مع موصلجي: " Padding="5"/>
+            <TextBlock Text="{Binding PendingWithMossalji}" Padding="5"/>
+            <TextBlock Text="المجموع: " Padding="5"/>
+            <TextBlock Text="{Binding Total}" Padding="5"/>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

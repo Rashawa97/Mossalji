@@ -84,6 +84,7 @@ namespace Mossalji.WPF
             this.PackageDeleveringTime.IsEnabled = false;
             this.PackageReceivingTime.IsEnabled = false;
             this.OrderStatus.IsEnabled = false;
+            this.FinancialStatus.IsEnabled = false;
             this.SaveOrder.Visibility = Visibility.Collapsed;
 
             this.Drivers.IsEnabled = false;
@@ -114,6 +115,7 @@ namespace Mossalji.WPF
             this.PackageReceivingTime.SelectedTime = _order.PackageReceivingTime;
             this.OrderDateTime.SelectedTime = _order.OrderDateTime;
             this.OrderStatus.SelectedIndex = (int)_order.OrderStatus;
+            this.FinancialStatus.SelectedIndex = (int)_order.FinancialStatus;
 
             this.Drivers.SelectedItem = _order.Driver==null ? null:((List<Driver>)this.Drivers.ItemsSource).FirstOrDefault(d => d.Id == _order.Driver.Id);
             this.Senders.SelectedItem = _order.Sender == null ? null : ((List<Sender>)this.Senders.ItemsSource).FirstOrDefault(s => s.Id == _order.Sender.Id); ;
@@ -152,7 +154,8 @@ namespace Mossalji.WPF
                         DriverNotifyingTime = (DateTime)DriverNotifyingTime.SelectedTime,
                         PackageDeleveringTime = (DateTime)PackageDeleveringTime.SelectedTime,
                         PackageReceivingTime = (DateTime)PackageReceivingTime.SelectedTime,
-                        OrderDateTime=(DateTime)OrderDateTime.SelectedTime
+                        OrderDateTime=(DateTime)OrderDateTime.SelectedTime,
+                        FinancialStatus = (FinancialStatus)FinancialStatus.SelectedIndex
 
 
                     };
@@ -190,6 +193,8 @@ namespace Mossalji.WPF
                         order.PackageDeleveringTime = (DateTime)PackageDeleveringTime.SelectedTime;
                         order.PackageReceivingTime = (DateTime)PackageReceivingTime.SelectedTime;
                         order.OrderDateTime = (DateTime)OrderDateTime.SelectedTime;
+
+                        order.FinancialStatus = (FinancialStatus)FinancialStatus.SelectedIndex;
 
                         DS.SaveChanges();
                     }

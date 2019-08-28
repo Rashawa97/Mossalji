@@ -183,17 +183,17 @@
                         </DockPanel>
                         <DockPanel>
                             <Button DockPanel.Dock="Right"
-                        x:Name="ClearFiniacialStatus"
-                        Click="ClearFiniacialStatus_Click"
+                        x:Name="ClearCity"
+                        Click="ClearCity_Click"
                         Style="{StaticResource MaterialDesignIconButton}"
                         ToolTip="الغاء البحث">
                                 <materialDesign:PackIcon
                         Kind="Clear" />
                             </Button>
 
-                            <ComboBox  x:Name="FinanicalStatus"
+                            <ComboBox  x:Name="City"
                                     FlowDirection="LeftToRight"
-                                    materialDesign:HintAssist.Hint="ذمم مالية للعميل"
+                                    materialDesign:HintAssist.Hint="المدينة"
                                     HorizontalContentAlignment="Right"
                                     VerticalAlignment="Center"
                                    

@@ -44,6 +44,8 @@ namespace Mossalji.WPF
             {
                 AllRecords = DS.Senders.Where(r => r.Disabled != true).
                           ToList();
+
+                City.ItemsSource = AllRecords.Select(s => s.City).Distinct().ToList();
             }
             // Initiaing the filtered list
             filtered = AllRecords;
@@ -85,7 +87,7 @@ namespace Mossalji.WPF
         {
             filtered = AllRecords.Where(o =>
            (Activity.SelectedItem == null || o.Activity == (Data.Enums.Activity)Activity.SelectedIndex) &&
-           (FinanicalStatus.SelectedItem == null || o.FinancialStatus == (Data.Enums.FinancialStatus)FinanicalStatus.SelectedIndex)
+            (City.SelectedItem == null || o.City == City.SelectedValue.ToString()) 
            )
            .ToList();
 
@@ -109,7 +111,7 @@ namespace Mossalji.WPF
             {
                 filtered = AllRecords.Where(o =>
             (Activity.SelectedItem == null || o.Activity == (Data.Enums.Activity)Activity.SelectedIndex) &&
-            (FinanicalStatus.SelectedItem == null || o.FinancialStatus == (Data.Enums.FinancialStatus)FinanicalStatus.SelectedIndex) &&
+            (City.SelectedItem == null || o.City == City.SelectedValue.ToString()) &&
             (o.ClientName.Contains(SearchBox.Text))
             )
             .ToList();
@@ -137,10 +139,10 @@ namespace Mossalji.WPF
         {
             Activity.SelectedIndex = -1;
         }
-
-        private void ClearFiniacialStatus_Click(object sender, RoutedEventArgs e)
+        
+        private void ClearCity_Click(object sender, RoutedEventArgs e)
         {
-           FinanicalStatus.SelectedIndex = -1;
+            City.SelectedIndex = -1;
         }
     }
 }

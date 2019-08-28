@@ -77,7 +77,11 @@ namespace Mossalji.WPF
                     break;
                 case 7:
                     // Reports
-                    MainContent.Content = null;
+                    MainContent.Content = new AccountsReport();
+                    break;
+                case 8:
+                    // Reports
+                    MainContent.Content = new ComessionsReport();
                     break;
 
             }

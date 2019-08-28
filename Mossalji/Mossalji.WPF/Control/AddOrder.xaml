@@ -219,7 +219,15 @@
                                     Margin="8"
                                     Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
                                     materialDesign:HintAssist.Hint="وقت استلام الزبون للطلب" />
-
+                        <ComboBox x:Name="FinancialStatus"
+                            FlowDirection="LeftToRight"
+                            materialDesign:HintAssist.Hint="ذمم مالية للعميل"
+                            HorizontalContentAlignment="Right"
+                            VerticalAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            Margin="8"
+                            Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                            ItemsSource="{local:Enumerate {x:Type enums:FinancialStatus}}"/>
                     </UniformGrid>
 
                     <!-- Buttons -->

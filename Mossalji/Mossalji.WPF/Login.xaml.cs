@@ -36,6 +36,10 @@ namespace Mossalji.WPF
 
             if(emp!=null)
             {
+                Properties.Settings.Default.UserName = UserName.Text;
+
+                Properties.Settings.Default.Save();
+
                 var mainWindow = new MainWindow(emp);
 
                 App.Current.MainWindow = mainWindow;
@@ -51,6 +55,11 @@ namespace Mossalji.WPF
             {
                 MessageBox.Show("اسم المستخدم او كلمة المرور غير صحيحة، يرجى اعادة المحاولة ", "خطـ", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            UserName.Text = Properties.Settings.Default.UserName;
         }
     }
 }

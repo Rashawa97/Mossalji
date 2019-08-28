@@ -61,17 +61,8 @@ FlowDirection="RightToLeft"
                             Margin="8"
                             Style="{StaticResource MaterialDesignFloatingHintComboBox}"
                             ItemsSource="{local:Enumerate {x:Type enums:Activity}}"/>
-                <ComboBox x:Name="FinancialStatus"
-                            FlowDirection="LeftToRight"
-                            materialDesign:HintAssist.Hint="ذمم مالية للعميل"
-                            HorizontalContentAlignment="Right"
-                            VerticalAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            Margin="8"
-                            Style="{StaticResource MaterialDesignFloatingHintComboBox}"
-                            ItemsSource="{local:Enumerate {x:Type enums:FinancialStatus}}"/>
+                
 
-                <TextBlock/>
                 <TextBlock/>
                 <StackPanel Orientation="Horizontal"  Grid.Row="2">
 

@@ -33,10 +33,7 @@ namespace Mossalji.Data.DataModels
         [Required]
         public Activity Activity { get; set; }
 
-        /// <summary>
-        ///      ذمم ماليه للعميل
-        /// </summary>
-        public FinancialStatus FinancialStatus { get; set; }
+
 
 
         public ICollection<Order> Orders { get; set; }

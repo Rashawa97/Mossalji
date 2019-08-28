@@ -60,6 +60,12 @@ namespace Mossalji.Data.DataModels
         ///  طريقة السداد للعميل                                     
         /// </summary>
         public PaymentMethod PaymentMethod { get; set; }
+
+        /// <summary>
+        ///     حالة الذمم المالية
+        /// </summary>
+        public FinancialStatus FinancialStatus { get; set; }
+
         /// <summary>
         /// وقت استلام طلب العميل                                   
         /// </summary>
