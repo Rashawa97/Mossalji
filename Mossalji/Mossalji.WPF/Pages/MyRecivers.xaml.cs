@@ -21,8 +21,8 @@ namespace Mossalji.WPF
     /// </summary>
     public partial class MyRecivers : UserControl
     {
-        private List<Reciver> AllRecords { set; get; }
-        private List<Reciver> filtered = new List<Reciver>(); public MyRecivers()
+        private List<Reciever> AllRecords { set; get; }
+        private List<Reciever> filtered = new List<Reciever>(); public MyRecivers()
         {
             InitializeComponent();
 
@@ -41,7 +41,7 @@ namespace Mossalji.WPF
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            var Reciver = DV.SelectedItem as Reciver;
+            var Reciver = DV.SelectedItem as Reciever;
             if (Reciver == null)
                 return;
 
@@ -73,7 +73,7 @@ namespace Mossalji.WPF
     
         private void DetailsButton_Click(object sender, RoutedEventArgs e)
         {
-            var reciver= DV.SelectedItem as Reciver;
+            var reciver= DV.SelectedItem as Reciever;
             if (reciver== null)
                 return;
 

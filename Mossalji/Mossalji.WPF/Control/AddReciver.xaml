@@ -68,7 +68,7 @@ FlowDirection="RightToLeft"
                             Grid.Column="0"
                             Style="{StaticResource MaterialDesignRaisedLightButton}"
                             Width="100"
-                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFF5F5" >
+                            ToolTip="حفظ" Background="#FFA91F1F" Foreground="#DDFFF5F5" >
                         حفظ
                     </Button>
 
@@ -81,7 +81,7 @@ FlowDirection="RightToLeft"
                             Grid.Column="2"
                             Style="{StaticResource MaterialDesignRaisedLightButton}"
                             Width="100"
-                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFF5F5">
+                            ToolTip="الغاء" Background="#FFA91F1F" Foreground="#DDFFF5F5">
                         الغاء
                     </Button>
                 </StackPanel>

@@ -83,7 +83,7 @@
                     <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
                     <DataGridTextColumn
                         Width="*"
-      Binding="{Binding Activity}"
+      Binding="{Binding Activity,Converter={local:EnumToStringConverter}}"
       Header=" نشاط العميل"
                         />
                     <!-- set a max length to get an indicator in the editor -->
@@ -99,13 +99,13 @@
 
       Header="موقع العميل (منطقة)"
                         />
-                    <DataGridTextColumn
+                    <!--<DataGridTextColumn
                          Width="*"
       Binding="{Binding OrderDateTime}"
 
       Header="تاريخ استلام الطلب"
       
-                        />
+                        />-->
                     <DataGridTextColumn
                          Width="*"
       Binding="{Binding FinancialStatus,Converter={local:EnumToStringConverter}}"
@@ -128,26 +128,26 @@
                 Grid.Column="0"
     Style="{StaticResource MaterialDesignRaisedLightButton}"
     Width="100"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFF5F5">
+    ToolTip="عرض التفاصيل" Background="#FFA91F1F" Foreground="#DDFFF5F5">
                 تفاصيل
             </Button>
             <Button x:Name="EditButton"
                     Click="EditButton_Click"
                 Grid.Row="3"
-                  Grid.Column="1"
+                  Grid.Column="2"
     Style="{StaticResource MaterialDesignRaisedLightButton}"
     Width="100"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+    ToolTip="تعديل" Background="#FFA91F1F" Foreground="#DDFFFFFF">
                 تعديل
             </Button>
-            <Button
+            <!--<Button
                 Grid.Row="3"
                   Grid.Column="2"
     Style="{StaticResource MaterialDesignRaisedLightButton}"
     Width="100"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+    ToolTip="الغاء" Background="#FFA91F1F" Foreground="#DDFFFFFF">
                 الغاء
-            </Button>
+            </Button>-->
         </Grid>
         <!--Fillter Side-->
         <local:AboveFillter 
@@ -213,7 +213,7 @@
                             Grid.Row="2"
                             Style="{StaticResource MaterialDesignRaisedLightButton}"
                             Width="150"                            
-                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                            ToolTip="اظهار الفلتر" Background="#FFA91F1F" Foreground="#DDFFFFFF">
                             فلترة النتائج
                         </Button>
                         <Button
@@ -223,7 +223,7 @@
                             Grid.Row="2"
                             Style="{StaticResource MaterialDesignRaisedLightButton}"
                             Width="150"                            
-                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                            ToolTip="الغاء الفلتر" Background="#FFA91F1F" Foreground="#DDFFFFFF">
                             الغاء
                         </Button>
                     </StackPanel>

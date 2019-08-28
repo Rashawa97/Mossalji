@@ -43,8 +43,9 @@ namespace Mossalji.WPF
             {
                 AllRecords = DS.Orders.
                     Include(nameof(Order.Driver)).
-                    Include(nameof(Order.Client)).
-                    Include(nameof(Order.Customer)).
+                    Include(nameof(Order.Sender)).
+                    Include(nameof(Order.Reciever)).
+                    Include(nameof(Order.Employee)).
                     Where(r => r.Disabled != true).
                     ToList();
 

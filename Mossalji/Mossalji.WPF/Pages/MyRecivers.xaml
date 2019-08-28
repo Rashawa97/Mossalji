@@ -121,7 +121,7 @@
                 Grid.Column="0"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Width="100"
-                ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                ToolTip="عرض التفاصيل" 
                 Background="#FFA91F1F" Foreground="#DDFFF5F5">
                 تفاصيل
             </Button>
@@ -129,22 +129,22 @@
                 x:Name="EditButton"
                 Click="EditButton_Click"
                 Grid.Row="3"
-                Grid.Column="1"
+                Grid.Column="2"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Width="100"
-                ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                ToolTip="تعديل" 
                 Background="#FFA91F1F" Foreground="#DDFFFFFF">
                 تعديل
             </Button>
-            <Button
+            <!--<Button
                 Grid.Row="3"
                 Grid.Column="2"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Width="100"
-                ToolTip="Resource name: MaterialDesignRaisedLightButton" 
+                ToolTip="الغاء" 
                 Background="#FFA91F1F" Foreground="#DDFFFFFF">
                 الغاء
-            </Button>
+            </Button>-->
         </Grid>
 
 
@@ -208,7 +208,7 @@
                             Grid.Row="2"
                             Style="{StaticResource MaterialDesignRaisedLightButton}"
                             Width="150"                            
-                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                            ToolTip="اظهار الفلتر" Background="#FFA91F1F" Foreground="#DDFFFFFF">
                             فلترة النتائج
                         </Button>
                         <Button
@@ -218,7 +218,7 @@
                             Grid.Row="2"
                             Style="{StaticResource MaterialDesignRaisedLightButton}"
                             Width="150"                            
-                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                            ToolTip="الغاء الفلتر" Background="#FFA91F1F" Foreground="#DDFFFFFF">
                             الغاء
                         </Button>
                     </StackPanel>

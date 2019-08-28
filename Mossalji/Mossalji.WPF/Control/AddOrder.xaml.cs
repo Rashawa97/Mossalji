@@ -116,8 +116,8 @@ namespace Mossalji.WPF
             this.OrderStatus.SelectedIndex = (int)_order.OrderStatus;
 
             this.Drivers.SelectedItem = _order.Driver==null ? null:((List<Driver>)this.Drivers.ItemsSource).FirstOrDefault(d => d.Id == _order.Driver.Id);
-            this.Senders.SelectedItem = _order.Client == null ? null : ((List<Sender>)this.Senders.ItemsSource).FirstOrDefault(s => s.Id == _order.Client.Id); ;
-            this.Recivers.SelectedItem = _order.Customer == null ? null : ((List<Reciver>)this.Recivers.ItemsSource).FirstOrDefault(d => d.Id == _order.Customer.Id);
+            this.Senders.SelectedItem = _order.Sender == null ? null : ((List<Sender>)this.Senders.ItemsSource).FirstOrDefault(s => s.Id == _order.Sender.Id); ;
+            this.Recivers.SelectedItem = _order.Reciever == null ? null : ((List<Reciever>)this.Recivers.ItemsSource).FirstOrDefault(d => d.Id == _order.Reciever.Id);
             /////////////////////
 
         }
@@ -161,9 +161,9 @@ namespace Mossalji.WPF
                     {
                         ord.Driver = DS.Drivers.First(d => d.Id == ((Driver)Drivers.SelectedItem).Id);
 
-                        ord.Client = DS.Senders.First(d => d.Id == ((Sender)Senders.SelectedItem).Id);
+                        ord.Sender = DS.Senders.First(d => d.Id == ((Sender)Senders.SelectedItem).Id);
 
-                        ord.Customer = DS.Receivers.First(d => d.Id == ((Reciver)Recivers.SelectedItem).Id);
+                        ord.Reciever = DS.Receivers.First(d => d.Id == ((Reciever)Recivers.SelectedItem).Id);
 
                         DS.Orders.Add(ord);
                         DS.SaveChanges();

@@ -52,7 +52,7 @@
                                         x:Name="AddDriver"
                                         Click="AddDriver_Click"
                                         Style="{StaticResource MaterialDesignIconForegroundButton}"
-                                        ToolTip="MaterialDesignIconForegroundButton">
+                                        ToolTip="اضافة سائق">
                                     <materialDesign:PackIcon
                                             Kind="Add" />
                                 </Button>
@@ -74,7 +74,7 @@
                                         x:Name="AddSender"
                                         Click="AddSender_Click"
                                         Style="{StaticResource MaterialDesignIconForegroundButton}"
-                                        ToolTip="MaterialDesignIconForegroundButton">
+                                        ToolTip="اضافة مرسل">
                                     <materialDesign:PackIcon
                                             Kind="Add" />
                                 </Button>
@@ -97,7 +97,7 @@
                                         x:Name="AddReciver"
                                         Click="AddReciver_Click"
                                         Style="{StaticResource MaterialDesignIconForegroundButton}"
-                                        ToolTip="MaterialDesignIconForegroundButton">
+                                        ToolTip="اضافة مستقبل">
                                     <materialDesign:PackIcon
                                             Kind="Add" />
                                 </Button>
@@ -239,7 +239,7 @@
                                     Grid.Column="0"
                                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                                     Width="100"
-                                    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFF5F5">
+                                    ToolTip="حفظ" Background="#FFA91F1F" Foreground="#DDFFF5F5">
                             حفظ
                         </Button>
 
@@ -251,7 +251,7 @@
                                     Grid.Column="2"
                                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                                     Width="100"
-                                    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFF5F5">
+                                    ToolTip="حفظ" Background="#FFA91F1F" Foreground="#DDFFF5F5">
                             الغاء
                         </Button>
                     </Grid>

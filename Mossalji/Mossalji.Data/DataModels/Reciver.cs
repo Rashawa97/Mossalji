@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mossalji.Data.DataModels
 {
-   public class Reciver :BaseDataModel
+   public class Reciever :BaseDataModel
     {
 
          /// <summary>

@@ -19,6 +19,11 @@ namespace Mossalji.Data.DataModels
         /// </summary> 
         [Required]
         public string PasswordHash { get; set; }
-      
+
+
+        public override string ToString()
+        {
+            return EmployeeName;
+        }
     }
 }

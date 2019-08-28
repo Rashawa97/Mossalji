@@ -49,7 +49,7 @@
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     Width="100"
                     Click="LoginButton_Click"
-                ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                ToolTip="تسجيل دخول" Background="#FFA91F1F" Foreground="#DDFFFFFF">
                     دخول
                 </Button>
             </StackPanel>

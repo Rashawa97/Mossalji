@@ -22,7 +22,7 @@ namespace Mossalji.WPF
     public partial class AddReciver : UserControl
     {
 
-        private Reciver _reciver;
+        private Reciever _reciver;
 
         public AddReciver()
         {
@@ -31,7 +31,7 @@ namespace Mossalji.WPF
             this.Focus();
         }
 
-        public AddReciver(Reciver reciver, bool detail)
+        public AddReciver(Reciever reciver, bool detail)
         {
             InitializeComponent();
 
@@ -70,7 +70,7 @@ namespace Mossalji.WPF
             {
                 if (_reciver == null)
                 {
-                    Reciver reciver = new Reciver()
+                    Reciever reciver = new Reciever()
                     {
                       CustomerName = CustomerName.Text,
                         City = City.Text,

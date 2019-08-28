@@ -88,9 +88,9 @@
                     <DataGridTextColumn 
                         Width="2*"
                         IsReadOnly="True"
-                        Binding="{Binding Client}"
+                        Binding="{Binding Sender}"
     
-                        Header="اسم العميل (صاحب الطلب)   "
+                        Header="اسم العميل (المرسل)"
       
                        />
                     <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
@@ -112,7 +112,7 @@
                                                 />
                   
                     <DataGridTextColumn 
-                        Width="2*"
+                        Width="*"
                         IsReadOnly="True"
                         Binding="{Binding Employee}"
                         Header="محرر الطلب "
@@ -133,9 +133,9 @@
                         Width="2*"
                         IsReadOnly="True"
     
-                        Binding="{Binding Customer}"
+                        Binding="{Binding Reciever}"
      
-                        Header="اسم الزبون"
+                        Header="اسم الزبون (المستقبل)"
     
                   />
               
@@ -150,7 +150,7 @@
                 Grid.Column="0"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Width="100"
-                ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFF5F5">
+                ToolTip="عرض التفاصيل" Background="#FFA91F1F" Foreground="#DDFFF5F5">
                  تفاصيل
             </Button>
             <Button
@@ -160,7 +160,7 @@
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
                 Width="100"
                 Click="EditButton_Click"
-                ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                ToolTip="تعديل" Background="#FFA91F1F" Foreground="#DDFFFFFF">
                 تعديل
             </Button>
      
@@ -228,7 +228,7 @@
                             Grid.Row="2"
                             Style="{StaticResource MaterialDesignRaisedLightButton}"
                             Width="150"                            
-                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                            ToolTip="اظهار الفلتر" Background="#FFA91F1F" Foreground="#DDFFFFFF">
                             فلترة النتائج
                         </Button>
                         <Button
@@ -238,7 +238,7 @@
                             Grid.Row="2"
                             Style="{StaticResource MaterialDesignRaisedLightButton}"
                             Width="150"                            
-                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#FFA91F1F" Foreground="#DDFFFFFF">
+                            ToolTip="الغاء الفلتر" Background="#FFA91F1F" Foreground="#DDFFFFFF">
                             الغاء
                         </Button>
                     </StackPanel>

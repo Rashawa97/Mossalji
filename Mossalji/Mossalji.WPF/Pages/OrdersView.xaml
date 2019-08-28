@@ -16,7 +16,7 @@ Loaded="UserControl_Loaded"
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -29,7 +29,7 @@ Loaded="UserControl_Loaded"
 
 
 
-            <TextBlock Text="موصلجي" Foreground="#BE2525" FontSize="30" FontWeight="Bold" Margin="5" Grid.Row="1"/>
+            <TextBlock Text="موصلجي" Foreground="#BE2525" FontSize="30" FontWeight="Bold" Margin="20 5" Grid.Row="1"/>
 
             <Grid Margin="5" Grid.Row="2" Grid.Column="0">
 

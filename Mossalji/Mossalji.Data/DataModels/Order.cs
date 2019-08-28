@@ -83,8 +83,8 @@ namespace Mossalji.Data.DataModels
 
         public Driver Driver { get; set; }
         public Employee Employee { get; set; }
-        public Reciver Customer { get; set; }
-        public Sender Client { get; set; }
+        public Reciever Reciever { get; set; }
+        public Sender Sender { get; set; }
 
 
 

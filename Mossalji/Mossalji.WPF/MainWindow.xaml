@@ -8,6 +8,7 @@
         Title="MainWindow" Height="600" Width="1024"
         x:Name="DashboardWindow"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowState="Maximized"
         WindowStyle="None" WindowStartupLocation="CenterScreen">
     
     <WindowChrome.WindowChrome>
@@ -47,11 +48,11 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem4">
+            <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem4">
                 <EasingDoubleKeyFrame KeyTime="0" Value="-250"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
-            </DoubleAnimationUsingKeyFrames>
+            </DoubleAnimationUsingKeyFrames>-->
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="button">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
@@ -199,7 +200,7 @@
                         <TextBlock Text="سائقين" Margin="10" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
-                <Separator/>
+                <!--<Separator/>
                 <ListViewItem x:Name="listViewItem4" Height="60" RenderTransformOrigin="0.5,0.5">
                     <ListViewItem.RenderTransform>
                         <TransformGroup>
@@ -227,7 +228,7 @@
                         <materialDesign:PackIcon Kind="Logout" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="خروج من النظام" Margin="10" VerticalAlignment="Center"/>
                     </StackPanel>
-                </ListViewItem>
+                </ListViewItem>-->
             </ListView>
         </StackPanel>
         <Grid x:Name="GridMain" Background="#FFFBFBFB" Width="{Binding ElementName=DashboardWindow,Path=ActualWidth}" RenderTransformOrigin="0.5,0.5">
